@@ -1,0 +1,15 @@
+
+{
+  version: '1.0',
+  defaultSchema: 'SALES_SOLR',
+  schemas: [
+    {
+      name: 'SALES_SOLR',
+      type: 'custom',
+      factory: 'com.airsupply.adapter.solr.SolrSchemaFactory',
+      operand: {
+        directory: 'solr'
+      }
+    }
+  ]
+}
