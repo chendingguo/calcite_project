@@ -1,9 +1,153 @@
 <html>
 <head>
+<meta charset="utf-8">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" />
+<style>
+.form-control-invalid {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: red;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+		.15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+}
+</style>
 <script src="js/jquery.min.js"></script>
 <script src="js/defination_column.js"></script>
 </head>
-<body onload="test()">
- <pre><div id="json_show"></div></pre>
+<body style="margin-left: 1cm;">
+    <div id="config_div">
+	<!-- connect information -->
+	<form class="form-inline">
+		<div class="form-group">
+			<label class="sr-only" for="host_ip">Email address</label> <input
+				type="text" class="form-control" id="server_ip" placeholder="ip">
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="serve_port">host_ip</label> <input
+				type="text" class="form-control" id="serve_port" placeholder="port">
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="table_name">host_ip</label> <input
+				type="text" class="form-control" id="table_name"
+				placeholder="table name">
+		</div>
+	</form>
+	<!-- ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝模板＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
+	<form class="form-inline">
+		<table id="tab11" style="display: none" class="table table-striped">
+			<tbody>
+				<tr>
+					<td height="30" align="center"><input class="form-control"
+						type="text" name="NO" size="2" value="1" /></td>
+					<td align="center"><input class="form-control" type="text"
+						name="column_name" /></td>
+					<td align="center"><select class="form-control"
+						name="column_type">
+							<option value="STRING">STRING</option>
+							<option>CHAR</option>
+							<option>INT</option>
+							<option>SHORT</option>
+							<option>LONG</option>
+							<option>DOUBLE</option>
+							<option>FLOAT</option>
+							<option>DATE</option>
+							<option>TIME</option>
+							<option>TIMESTAMP</option>
+							<option>BOOLEAN</option>
+					</select></td>
+					<td align="center"><input class="form-control" type="text"
+						name="family_name"/></td>
+					<td><input class="btn btn-default" type="button" id="Button1"
+						onClick="deltr(this)"  value="Delete"></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+	<!-- ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝模板结束＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
+	<input type="button" id="btn_addtr" class="btn btn-default"
+		value="AddColumn">
+
+
+	<table id="dynamicTable" class="table table-striped"
+		style="width: 80%; border: 0; cellspacing: 0">
+		<thead>
+			<tr>
+				<td height="30" align="center">ID</td>
+				<td align="center">ColumnName</td>
+				<td align="center">ColumnType</td>
+				<td align="center">FamilyName</td>
+				<td></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td height="30" align="center"><input class="form-control"
+					type="text" name="NO" size="2" value="1" /></td>
+				<td align="center"><input class="form-control" type="text"
+					name="column_name" value="col1" /></td>
+				<td align="center"><select class="form-control"
+					name="column_type">
+						<option value="STRING">STRING</option>
+						<option>CHAR</option>
+						<option>INT</option>
+						<option>SHORT</option>
+						<option>LONG</option>
+						<option>DOUBLE</option>
+						<option>FLOAT</option>
+						<option>DATE</option>
+						<option>TIME</option>
+						<option>TIMESTAMP</option>
+						<option>BOOLEAN</option>
+				</select></td>
+				<td align="center"><input class="form-control" type="text"
+					name="family_name" value="family_1" /></td>
+				<td><input class="btn btn-default" type="button" id="Button1"
+					onClick="deltr(this)" value="Delete"></td>
+			</tr>
+			<tr>
+				<td height="30" align="center"><input class="form-control"
+					type="text" name="NO" size="2" value="1" /></td>
+				<td align="center"><input class="form-control" type="text"
+					name="column_name" value="col2" /></td>
+				<td align="center"><select class="form-control"
+					name="column_type">
+						<option value="STRING">STRING</option>
+						<option>CHAR</option>
+						<option selected>INT</option>
+						<option>SHORT</option>
+						<option>LONG</option>
+						<option>DOUBLE</option>
+						<option>FLOAT</option>
+						<option>DATE</option>
+						<option>TIME</option>
+						<option>TIMESTAMP</option>
+						<option>BOOLEAN</option>
+				</select></td>
+				<td align="center"><input class="form-control" type="text"
+					name="family_name" value="family_2" /></td>
+				<td><input class="btn btn-default" type="button" id="Button1"
+					onClick="deltr(this)" value="Delete"></td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	<input type="button" id="sumbit_btn" class="btn btn-default"
+		value="Submit" onclick="showJsonData()">
+	<pre id="json_show" style="width: 80%"></pre>
+	
 </body>
 </html>
