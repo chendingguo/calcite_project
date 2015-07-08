@@ -1,0 +1,14 @@
+{
+  version: '1.0',
+  defaultSchema: 'HBASE_SCHEMA',
+  schemas: [
+    {
+      name: 'HBASE_SCHEMA',
+      type: 'custom',
+      factory: 'com.airsupply.adapter.hbase.HBaseSchemaFactory',
+      operand: {
+        directory: 'hbase'
+      }
+    }
+  ]
+}

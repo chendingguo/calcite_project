@@ -1,0 +1,28 @@
+
+{
+  connInfo: {
+    ip: "192.168.202.129",
+    port: "2181",
+    tableName:"kylin_metadata";
+    
+  },
+  rowKeyName:"ROW_KEY",
+  families: [
+    {
+      name: "f",
+      columns: [
+        
+        {
+          name: "T",
+          type: "string"
+        },
+        {
+          name: "C",
+          type: "string"
+        }
+      ]
+    }
+  ],
+  queryFilter: {
+  }
+}

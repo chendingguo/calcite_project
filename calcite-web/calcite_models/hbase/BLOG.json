@@ -1,0 +1,46 @@
+{
+  connInfo: {
+    ip: "192.168.202.129",
+    port: "2181",
+    tableName:"blog";
+    
+  },
+  rowKeyName:"ROW_KEY",
+  families: [
+    {
+      name: "article",
+      columns: [
+        
+        {
+          name: "TITLE",
+          type: "string"
+        },
+        {
+          name: "CONTENT",
+          type: "string"
+        },
+        {
+          name: "TAG",
+          type: "string"
+        }
+      ]
+    },
+    
+    {
+      name: "author",
+      columns: [
+        {
+          name: "NAME",
+          type: "string"
+        },
+        {
+          name: "NICKNAME",
+          type: "string"
+        }
+      ]
+    }
+  ],
+  queryFilter: {
+    startRow:"rowKey1"
+  }
+}

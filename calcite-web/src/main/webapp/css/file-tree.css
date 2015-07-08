@@ -1,0 +1,17 @@
+body{
+	margin-left:5px;
+	margin-right:5px;
+}
+.contact {
+	width: 960px;
+	border: solid 1px #ccc;
+}
+
+.leftside {
+	width: 300px;
+	float: left;
+}
+
+.rightside {
+	height: 100px;
+}

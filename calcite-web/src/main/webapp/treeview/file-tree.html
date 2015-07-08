@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Config File</title>
+<meta charset="utf-8">
+<link href="jquery.tree.css" rel="stylesheet" type="text/css" />
+<meta name="description" content="">
+<meta name="author" content="airsupply">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../css/prettify.css">
+<link rel="stylesheet" href="../css/hemisu-light.css">
+<link rel="stylesheet" href="../css/screen.css" media="screen">
+<link rel="stylesheet" href="../css/file-tree.css">
+<link rel="stylesheet" href="../css/prism.css">
+<link id="style" href="../css/classic.css" rel="stylesheet"
+	media="screen">
+<link
+	href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css"
+	rel="stylesheet">
+<script src="../js/prism.js"></script>
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/jquery.columns.min.js"></script>
+<script src="../js/search/search.js"></script>
+<script src="../js/treeview/jquery.tree.js"></script>
+<script src="../js/treeview/file-tree.js"></script>
+
+</head>
+
+<body class='ie'>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">CALCITE</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="../search/index.html">Select <span
+							class="sr-only">(current)</span></a></li>
+					<li class="active"><a href="config.html">Config File <span
+							class="sr-only">(current)</span></a></li>
+				</ul>
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search">
+					</div>
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Link</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Dropdown <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+
+						</ul></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+
+	<div style="margin-bottom: 5px;">
+		<!-- <button id="showchecked">Get Seleceted Nodes</button>
+		<button id="showcurrent">Get Current Node</button> -->
+	</div>
+	<div>
+		<div class="leftside">
+			<div id="tree"></div>
+		</div>
+
+		<div class="rightside">
+			<pre class="line-numbers">
+			<code id="file_content" class="language-javascript">
+			  $(document).ready(function() {
+    if ($.browser.msie) {
+        var v = parseInt($.browser.version);
+        $(document.body).addClass("ie ie" + v);
+    }
+});
+			 </code>
+			</pre>
+		</div>
+
+
+	</div>
+
+</body>
+
+</html>

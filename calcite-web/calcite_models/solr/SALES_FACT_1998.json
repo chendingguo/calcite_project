@@ -1,0 +1,50 @@
+{
+  connInfo: {
+    ip: "192.168.202.129",
+    port: "8080",
+    coreName: "core3"
+  },
+ 
+  tableColumns: [
+    {
+      name: "id",
+      type: "int"
+    },
+    {
+      name: "product_id",
+      type: "int"
+    },
+    {
+      name: "time_id",
+      type: "int"
+    },
+    {
+      name: "customer_id",
+      type: "int"
+    },
+    {
+      name: "promotion_id",
+      type: "int"
+    },
+    {
+      name: "store_id",
+      type: "int"
+    },
+    {
+      name: "store_sales",
+      type: "float"
+    },
+	{
+      name: "store_cost",
+      type: "float"
+    },
+	{
+      name: "unit_sales",
+      type: "float"
+    }
+  ],
+  
+   queryFilter:{
+     limit:"200000"
+  }
+}
